@@ -11,11 +11,9 @@ const inter = Inter({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    <ThemeProvider enableSystem={true} attribute='class'>
       <main className={inter.variable}>
         <Component {...pageProps} />
       </main>
-     </ThemeProvider>
     </>
   );
 }
