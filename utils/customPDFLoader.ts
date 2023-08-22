@@ -85,10 +85,13 @@ export class CustomTextLoader extends BufferLoader {
     metadata: Document['metadata'],
   ): Promise<Document[]> {
     const content = raw.toString();
-    const document = new Document({
-      pageContent: content,
-      metadata: { ...metadata },
-    });
+    const document =new Document({
+        pageContent: content, // Convert to string
+        metadata: {
+          ...metadata,
+          pdf_name: getPdfName(metadata.source),
+        },
+      })
     return [document];
   }
 }
